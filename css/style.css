@@ -1,0 +1,324 @@
+
+:root{
+    --yellow-color : rgb(220, 34, 34) ; 
+    --text-color : #eee ; 
+    --lighter-color  :#171717;
+    --main-color: #101010 ; 
+}
+body{
+    background-color: var(--main-color);
+}
+.navbar{
+    background-color: var(--lighter-color) !important;
+}
+.navbar  a {
+    margin-right: 20px;
+    color: var(--text-color);
+    transition: 0.3s;
+    animation: slideTop .5s ease forwards ; 
+}
+ 
+.navbar  a:hover{
+    color: var(--yellow-color);
+}
+/* start header  */
+header{
+    height: 100vh ; 
+    color: var(--text-color);
+    
+}
+header .row div:first-child {
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+@media(max-width:768px){
+    header{
+        height: auto;
+        text-align: center;
+    }
+    header .row{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+}
+header p span {
+    color: var(--yellow-color);
+}
+.social-icons li {
+    margin-right: 10px ; 
+}
+.social-icons li a {
+    color: var(--yellow-color);
+    border: 2px solid var(--yellow-color);
+    border-radius: 50% ;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    transition: 0.3s;
+    animation: slideLeft .5s ease forwards; 
+    animation-delay: calc( var(--i) * .2s) ;
+}
+.social-icons li a:hover{
+    transform: scale(1.1);
+    color: var(--main-color);
+    background-color: var(--yellow-color);
+}
+
+@media(max-width:768px){
+    ul {
+        justify-content: center;
+        align-items: center;
+    }
+}
+.btn{
+    background-color: var(--yellow-color);
+    color: var(--lighter-color);
+    box-shadow: 0px 0px 10px 4px  var(--yellow-color);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.btn:hover{
+    color: white;
+}
+header .text {
+    opacity: 0;
+    animation: slideBottom 1s ease forwards ;
+    animation-delay: .7s;
+}
+header img{
+    width: 90%;
+    height: 90%;
+    box-shadow:  -11px -6px 10px var(--yellow-color), 11px 12px 10px rgb(108, 106, 106);
+}
+@media(max-width:768px){
+    header img{
+        display: block;
+        margin: 40px auto ;
+    }
+}
+/* end header  */
+/* start about me  */
+span  {
+    color: var(--yellow-color);
+}
+.about h1 {
+    width: fit-content;
+    margin: 40px auto;
+}
+.about h1::before{
+    content: "";
+    width: 100% ; 
+    bottom: -10px;
+    height: 2px;
+    background-color: var(--yellow-color);
+    margin-right: 10px;
+    position: absolute;
+}
+.about h1::after{
+    content: "";
+    width: 15px ; 
+    height:15px ;
+    border-radius: 50%; 
+    bottom: -17.5px;    
+    left: 50%;
+    border: 2px solid var(--yellow-color) ;
+    transform: translateX(-50%);
+    background-color: white;
+    margin-right: 10px;
+    position: absolute;
+}
+/* end about me  */
+#services{
+    animation: slideRight 1s ease forwards;
+}
+#services .container svg {
+    font-size: 30px;
+    color: var(--yellow-color);
+}
+#services .item{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+#services .container .item .content{
+    box-shadow: 0px 0px 10px 3px  var(--yellow-color);
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: 0.3s;
+}
+#services .container .item .content:hover{
+    box-shadow: 0px 0px 10px 10px  var(--yellow-color);
+    transform: translateY(-20px);
+}
+/* start skills  */
+.skills ul  p{
+    margin: 20px 0  ;
+    background-color: var(--lighter-color);
+    height: 6px;
+}
+.skills ul li{
+    font-size: 20px;
+}
+.skills ul  svg {
+    color: var(--yellow-color);
+}
+.skills ul  span{
+    height: 100%;
+    background: linear-gradient(135deg, #434242, var(--yellow-color), #333333);
+    display: block;
+    border-radius: inherit;
+}
+.circles{
+    display: flex;
+    flex-wrap: wrap;
+}
+.radialbars{
+    width: 50%;
+    height: 170px;
+    position: relative;
+}
+.precentage{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.radialbars svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px ;
+    height: 160px;
+}
+.progressbar {
+    stroke-width: 10;                   /* Thickness of the stroke */
+    fill: transparent;                  /* No fill inside the circle */
+    stroke-dasharray: 502;              /* Length of the stroke path (circumference) */
+    stroke-dashoffset: 502;             /* Offset to initially hide the stroke */
+    stroke-linecap:round;              /* Rounds the ends of the stroke */
+}
+
+/* Styling for the background path */
+.path {
+    stroke: var(--yellow-color);        /* Sets the stroke color (using a CSS variable) */
+    stroke-width: 10;                   /* Thickness of the stroke */
+    fill: transparent;                  /* No fill inside the circle */
+    stroke-dasharray: 502;              /* Length of the stroke path (matches progress circle) */
+    stroke-dashoffset: 502;               /* No offset, so the path is fully visible */
+    stroke-linecap: round;              /* Rounds the ends of the stroke */
+}
+.path-1{
+    animation: animatebar-1  1s linear forwards;
+}
+.path-2 , 
+.path-3{
+    animation: animatebar-2  1s linear forwards;
+}
+.path-4{
+    animation: animatebar-3  1s linear forwards;
+}
+
+/* start projects  */
+.projects .box {
+    min-height: 240px;
+}
+.projects .image{
+    height: 100%;
+}
+.projects .image img{
+    width: 100%;
+    height: 100%;
+}
+.projects .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    background-color: #685858a6;
+    transition: 0.3s;
+    
+}
+.projects .box:hover .text{
+    transform: translateY(0);
+}
+/* end projects  */
+/* start form  */
+form input , 
+form textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #3f3f3f;
+}
+form textarea{
+    resize: none;
+    min-height: 120px;
+}
+.footer{
+    background-color: var(--yellow-color);
+}
+/* end form  */
+@keyframes animatebar-1 {
+    100%{
+        stroke-dashoffset: 100.4;
+    }
+}
+@keyframes animatebar-2 {
+    100%{
+        stroke-dashoffset: 50.2;
+    }
+}
+@keyframes animatebar-3 {
+    100%{
+        stroke-dashoffset: 150.6;
+    }
+}
+@keyframes slideTop{
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+} 
+@keyframes slideRight{
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft{
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom{
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translatey(0%);
+        opacity: 1;
+    }
+}
